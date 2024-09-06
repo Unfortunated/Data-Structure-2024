@@ -84,7 +84,13 @@ public class Deck extends DeQLinkedList{
 			
 		} else {
 			try {
-				
+				for (int curr = n - 1; curr >= 0; curr--) {
+					this.insertLast(removeNth(curr));
+				}
+
+				for (int i = 0; i < this.size() - n; i++) {
+					this.insertLast(this.removeFirst());
+				}
 
 			} catch (EmptyQueueException e) {
 				
